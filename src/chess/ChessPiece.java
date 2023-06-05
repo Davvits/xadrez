@@ -5,13 +5,27 @@ import boardgame.Position;
 
 public abstract class ChessPiece extends Piece {
 	private Color color;
+	private int moveCount;
 	
 	public ChessPiece(Board board, Color color) {
 		super(board);
 		this.color = color;
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	public int getMoveCount() {
+		return moveCount;
+	}
+	
+	public void increaseMoveCount() {
+		moveCount++;
+	}
+	
+	public void deacreaseMoveCount() {
+		moveCount--;
+	}
+	
+	
 	public Color getColor() {
 		return color;
 	}

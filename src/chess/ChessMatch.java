@@ -100,10 +100,10 @@ public class ChessMatch {
 	
 	public ChessPiece replacePromotedPiece(String type) {
 		String[] types = {"B","N","Q","R"};
-		List<String> typesList = Arrays.asList(type);
+		List<String> typesList = Arrays.asList(types);
 		
 		if (promoted == null) throw new IllegalStateException("There is no piece to be promoted");
-		if (!typesList.contains(type)) throw new InvalidParameterException("Invalid type for promotion");
+		if (!typesList.contains(type)) return promoted;
 		
 		Position pos = promoted.getChessPosition().toPosition();
 		Piece p = board.removePiece(pos);
